@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doors Docks and Gates | Northwest Georgia</title>
+  <meta name="description" content="Doors Docks and Gates — residential and commercial door, dock, and gate services in Northwest Georgia, Tennessee, and surrounding areas.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2a4a;
+      --blue: #2563eb;
+      --light-blue: #dbeafe;
+      --orange: #ea580c;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light-gray: #f1f5f9;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    nav .logo span { color: var(--orange); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav ul a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--white); }
+    nav .phone-nav {
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #c2410c; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.4);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--white); }
+
+    /* ── SERVICES ── */
+    .services { padding: 4rem 2rem; background: var(--light-gray); }
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    .service-card .tag {
+      display: inline-block;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .about-strip h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .about-strip p {
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .contact-row a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ── AREA ── */
+    .area {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .area h2 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+    .area p { color: var(--gray); max-width: 500px; margin: 0 auto; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Doors Docks <span>&</span> Gates</div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:8632556901" class="phone-nav">863-255-6901</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Doors, Docks &amp; Gates<br><span>Done Right.</span></h1>
+  <p>Residential and commercial door, dock, and gate services for Northwest Georgia, Tennessee, and surrounding areas.</p>
+  <div class="hero-btns">
+    <a href="tel:8632556901" class="btn-primary">Call 863-255-6901</a>
+    <a href="#services" class="btn-secondary">View Services</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2 class="section-title">What We Do</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="tag">Residential</span>
+      <h3>Garage Doors</h3>
+      <p>New door installation, replacements, and repairs. All major brands and styles.</p>
+    </div>
+    <div class="service-card">
+      <span class="tag">Residential</span>
+      <h3>Openers &amp; Springs</h3>
+      <p>Garage door opener installation and repair. Spring replacement — fast, safe service.</p>
+    </div>
+    <div class="service-card">
+      <span class="tag">Commercial</span>
+      <h3>Overhead Doors</h3>
+      <p>Commercial overhead door installation, service, and dock equipment. $175 trip charge.</p>
+    </div>
+    <div class="service-card">
+      <span class="tag">Commercial</span>
+      <h3>Dock Equipment</h3>
+      <p>Dock levelers, seals, bumpers, and full dock service. Keep your operation moving.</p>
+    </div>
+    <div class="service-card">
+      <span class="tag">Residential &amp; Commercial</span>
+      <h3>Gates</h3>
+      <p>Gate installation, maintenance, and repair. Automated and manual systems. $115 trip charge.</p>
+    </div>
+    <div class="service-card">
+      <span class="tag">Emergency</span>
+      <h3>After-Hours Service</h3>
+      <p>Emergency service available outside regular hours. Call anytime you need us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <h2>Doors Docks and Gates, LLC</h2>
+  <p>Proudly serving Rocky Face, GA and the surrounding region. Professional service, honest estimates, and work that's built to last.</p>
+  <div class="contact-row">
+    <a href="tel:8632556901">📞 863-255-6901</a>
+    <a href="mailto:office@doorsdocksandgates.com">✉️ office@doorsdocksandgates.com</a>
+    <span>📍 Rocky Face, GA</span>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area">
+  <h2>Service Area</h2>
+  <p>Northwest Georgia, Tennessee, and surrounding areas.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Doors Docks and Gates LLC &nbsp;|&nbsp; <a href="tel:8632556901">863-255-6901</a> &nbsp;|&nbsp; Rocky Face, GA</p>
+</footer>
+
+</body>
+</html>
