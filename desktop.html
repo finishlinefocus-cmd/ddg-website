@@ -3,30 +3,528 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DDG Desktop | Residential Doors, Gates & Commercial Access</title>
-  <meta name="description" content="Desktop DDG site with residential featured first and commercial services available as a separate path." />
+  <title>DDG - Residential Garage Door Service</title>
   <style>
-    :root{--navy:#173f6b;--navy-dark:#102f52;--navy-deeper:#0b2443;--gold:#d4aa45;--gold-light:#f0c96c;--white:#fff;--off:#f5f7fa;--light:#e8f0f8;--text:#102337;--muted:#60758c;--border:#dce6f0;--shadow:0 18px 42px rgba(13,61,110,.14);--radius:22px;--wrap:1180px}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--off);color:var(--text);line-height:1.6} a{text-decoration:none;color:inherit} img{display:block;max-width:100%}.wrap{width:min(var(--wrap),calc(100% - 36px));margin:0 auto}
-    .top{background:var(--navy-deeper);color:#fff}.top .wrap{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.75rem 0;flex-wrap:wrap}.top a{color:var(--gold-light);font-weight:700}
-    header{background:linear-gradient(180deg,#fff 0%,#f2f6fb 100%);border-bottom:3px solid var(--gold)}.header-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:1.5rem;align-items:center;padding:1rem 0}.logo{height:126px;width:auto}.header-copy .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;font-weight:800}.header-copy h1{font-size:3.4rem;line-height:.96;margin:.35rem 0 .7rem}.header-copy p{margin:0;color:var(--muted);max-width:650px;font-size:1.05rem}
-    .nav{position:sticky;top:0;z-index:50;background:var(--navy-deeper);box-shadow:0 12px 24px rgba(6,30,56,.16)}.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 0}.nav-links{display:flex;gap:1rem;flex-wrap:wrap}.nav-links a{color:rgba(255,255,255,.92);font-weight:700}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.1rem;border-radius:999px;font-weight:800}.nav-cta,.btn-primary{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-deeper)}.btn-outline{border:2px solid rgba(255,255,255,.24);color:#fff}
-    .hero{background:linear-gradient(155deg,var(--navy) 0%,var(--navy-dark) 55%,var(--navy-deeper) 100%);color:#fff;padding:2.5rem 0}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:center}.hero-card,.card,.info{background:#fff;color:var(--text);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.hero-card img,.card img{width:100%;height:250px;object-fit:cover}.hero-card .body,.card .body,.info{padding:18px}
-    .path-cards,.cards{display:grid;gap:1rem}.path-cards{grid-template-columns:repeat(4,1fr);margin-top:1rem}.path-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(13,61,110,.08)}.path-card h3{margin:0 0 .35rem}.path-card p{margin:0 0 .8rem;color:#4f6277}.path-card a{color:var(--navy);font-weight:800}
-    section{padding:2rem 0}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:800}.section-title{font-size:2.25rem;line-height:1.03;margin:.35rem 0 .4rem}.lead{color:var(--muted);max-width:760px}.cards{grid-template-columns:repeat(3,1fr)}.tag{display:inline-block;margin-bottom:8px;padding:5px 9px;border-radius:999px;background:var(--light);color:var(--navy);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.card h3{margin:0 0 6px}.card p{margin:0 0 10px;color:#4f6277}.path-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
-    .cta{background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:1.5rem 0}.cta-grid{display:flex;justify-content:space-between;gap:1rem;align-items:center}.cta h3{margin:0;color:var(--navy-deeper);font-size:2rem}.cta p{margin:.35rem 0 0;color:rgba(16,35,55,.82);font-weight:600}.cta .btn-outline{border-color:rgba(11,36,67,.22);color:var(--navy-deeper)}
-    footer{background:var(--navy-deeper);color:rgba(255,255,255,.92)}.footer-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:1rem;padding:2rem 0}.footer-title{color:var(--gold-light);font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.7rem}footer a{display:block;color:rgba(255,255,255,.92);margin-bottom:.4rem}
-    @media(max-width:980px){.header-inner,.hero-grid,.cards,.path-grid,.footer-grid,.path-cards{grid-template-columns:1fr}.cta-grid,.nav .wrap{flex-direction:column;align-items:flex-start}}
+    :root {
+      --navy: #173f6b;
+      --navy-dark: #102f52;
+      --navy-deeper: #0b2443;
+      --gold: #d4aa45;
+      --gold-light: #f0c96c;
+      --white: #ffffff;
+      --off-white: #f5f7fa;
+      --light-blue: #e8f0f8;
+      --mid-blue: #c2d6ec;
+      --text: #0e1e2e;
+      --muted: #5a6e82;
+      --green: #1e7a4d;
+      --green-bg: #e8f7ef;
+      --red: #c0392b;
+      --red-bg: #fdf0ef;
+      --border: #dce6f0;
+      --shadow-sm: 0 2px 10px rgba(13,61,110,.08);
+      --shadow-md: 0 8px 28px rgba(13,61,110,.12);
+      --shadow-lg: 0 20px 50px rgba(13,61,110,.16);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Arial, sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy-deeper);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: .03em;
+    }
+    .nav-badge {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy-deeper);
+      font-weight: 900;
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-phone {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .nav-phone span { font-size: 12px; color: rgba(255,255,255,.7); display: block; font-weight: 400; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 55%, var(--navy-deeper) 100%);
+      color: var(--white);
+      padding: 56px 24px 48px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 50px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,.88);
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+    .cta-stack { display: flex; flex-direction: column; gap: 12px; max-width: 340px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-gold { background: var(--gold); color: var(--navy-deeper); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.35); }
+    .btn-outline:hover { border-color: var(--gold); }
+    .hero-trust {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trust-pill {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.9);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ISSUE CARD */
+    .issue-card {
+      background: var(--white);
+      margin-top: 34px;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      color: var(--text);
+    }
+    .issue-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .issue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .issue-chip {
+      background: var(--light-blue);
+      border: 1px solid var(--mid-blue);
+      border-radius: 10px;
+      padding: 12px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .urgent-bar {
+      margin-top: 14px;
+      background: var(--red-bg);
+      border: 1px solid #f5c6c3;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red);
+      text-align: center;
+    }
+
+    /* SECTIONS */
+    .section { padding: 28px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* CARDS GRID */
+    .cards { display: grid; gap: 16px; }
+    .cards-2 { grid-template-columns: 1fr 1fr; }
+    .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card h3 { font-size: 18px; margin-bottom: 12px; }
+    .card ul { padding-left: 18px; }
+    .card ul li { margin-bottom: 8px; font-size: 15px; }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--light-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    /* PHOTO INTAKE */
+    .intake-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .intake-left { padding: 32px; }
+    .intake-right {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deeper) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      min-height: 320px;
+    }
+    .garage-mockup {
+      width: 180px; height: 160px;
+      background: linear-gradient(180deg, #cfd9e2 0%, #aebbc8 100%);
+      border-radius: 10px;
+      border: 4px solid rgba(255,255,255,.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .garage-mockup::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: 28%; height: 2px;
+      background: rgba(0,0,0,.15);
+      box-shadow:
+        0 32px 0 rgba(0,0,0,.12),
+        0 64px 0 rgba(0,0,0,.12),
+        0 96px 0 rgba(0,0,0,.12);
+    }
+    .badge { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+    .badge-green { background: var(--green-bg); color: var(--green); }
+    .intake-steps { list-style: none; padding: 0; }
+    .intake-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .intake-steps li:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 24px; height: 24px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* SERVICE AREA */
+    .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .area-chip {
+      background: var(--light-blue);
+      border: 1px solid var(--mid-blue);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+    }
+
+    /* REVIEWS */
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stars { color: var(--gold); font-size: 18px; margin-bottom: 8px; }
+    .review-text { font-size: 15px; margin-bottom: 10px; }
+    .reviewer { font-size: 13px; font-weight: 700; color: var(--muted); }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deeper) 100%);
+      color: var(--white);
+      padding: 48px 24px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .footer-cta h2 { font-size: 32px; margin-bottom: 10px; }
+    .footer-cta p { color: rgba(255,255,255,.85); margin-bottom: 24px; font-size: 16px; }
+    .footer-cta .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .footer-bottom {
+      background: var(--navy-deeper);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 8px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .cards-2, .cards-3 { grid-template-columns: 1fr; }
+      .intake-section { grid-template-columns: 1fr; }
+      .intake-right { min-height: 200px; }
+      .area-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-stack { max-width: 100%; }
+      nav { flex-direction: column; gap: 10px; padding: 12px 24px; text-align: center; }
+      .issue-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="top"><div class="wrap"><div>Serving Northwest Georgia &amp; Tennessee</div><a href="tel:863-255-6901">Call 863-255-6901</a></div></div>
-  <header><div class="wrap header-inner"><img class="logo" src="images/ddg-logo.png" alt="DDG logo"><div class="header-copy"><div class="eyebrow">Desktop experience</div><h1>Residential first. Commercial ready.</h1><p>Desktop visitors get a broader overview, while still seeing residential garage doors and gates first — with clear paths into commercial services.</p></div></div></header>
-  <nav class="nav"><div class="wrap"><div class="nav-links"><a href="#doors">Residential Doors</a><a href="#gates">Residential Gates</a><a href="#openers">Openers</a><a href="commercial.html">Commercial</a><a href="mobile.html">View Mobile Version</a></div><a class="nav-cta" href="#contact">Request Service</a></div></nav>
-  <section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Residential focus</div><div class="section-title" style="color:#fff">A cleaner DDG front end for desktop visitors.</div><p class="lead" style="color:rgba(255,255,255,.9)">The desktop version gives more room for navigation and a stronger overview without forcing the whole business into one oversized scrolling experience.</p><div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem"><a class="btn btn-primary" href="#doors">Explore Residential</a><a class="btn btn-outline" href="commercial.html">Open Commercial Page</a></div><div class="path-cards"><div class="path-card"><h3>Doors</h3><p>Residential garage doors and upgrades.</p><a href="#doors">Jump in →</a></div><div class="path-card"><h3>Gates</h3><p>Residential gate systems and access.</p><a href="#gates">Jump in →</a></div><div class="path-card"><h3>Openers</h3><p>Remotes, keypads, and operators.</p><a href="#openers">Jump in →</a></div><div class="path-card"><h3>Commercial</h3><p>Separate page for commercial traffic.</p><a href="commercial.html">Go there →</a></div></div></div><div class="hero-card"><img src="images/hero_residential.jpg" alt="Residential garage door"><div class="body"><strong>Desktop overview</strong><div class="lead">More structured layout, same residential-first positioning.</div></div></div></div></section>
-  <section id="doors"><div class="wrap"><div class="eyebrow">Residential doors</div><h2 class="section-title">Garage doors for homeowners</h2><p class="lead">Repairs, replacements, upgrades, and visual improvement for residential properties.</p><div class="cards"><article class="card"><img src="images/res_1.jpg" alt="Residential garage doors"><div class="body"><span class="tag">Doors</span><h3>New doors & replacements</h3><p>Modern looks, better performance, and everyday convenience.</p></div></article><article class="card" id="gates"><img src="images/hero_gate.jpg" alt="Residential gates"><div class="body"><span class="tag">Gates</span><h3>Residential gate service</h3><p>Secure access, better operation, and smoother entry control.</p></div></article><article class="card" id="openers"><img src="images/img_opener.jpg" alt="Openers"><div class="body"><span class="tag">Openers</span><h3>Openers, remotes & access</h3><p>Troubleshooting and upgrades for everyday access problems.</p></div></article></div></div></section>
-  <section><div class="wrap path-grid"><div class="info"><div class="eyebrow">Commercial side of the house</div><h2 class="section-title">Commercial gets its own destination.</h2><p class="lead">That keeps the front experience cleaner while still making commercial services easy to find.</p><a class="btn btn-primary" href="commercial.html">Open Commercial Services</a></div><div class="info"><div class="eyebrow">Device-aware loading</div><h2 class="section-title">Desktop page on desktop, mobile page on phone.</h2><p class="lead">The site entry now routes visitors automatically based on screen/device so they see the right version first.</p><a class="btn btn-primary" href="mobile.html">View Mobile Version</a></div></div></section>
-  <section class="cta" id="contact"><div class="wrap cta-grid"><div><h3>Need service now?</h3><p>Call or text DDG for residential help or commercial questions.</p></div><div style="display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-primary" href="tel:863-255-6901">Call 863-255-6901</a><a class="btn btn-outline" href="mailto:office@doorsdocksandgates.com">Email DDG</a></div></div></section>
-  <footer><div class="wrap footer-grid"><div><div class="footer-title">Doors Docks &amp; Gates</div><div>Residential-first presentation with clear routing into the commercial side of the business.</div></div><div><div class="footer-title">Navigate</div><a href="#doors">Residential Doors</a><a href="#gates">Residential Gates</a><a href="#openers">Openers</a><a href="commercial.html">Commercial</a></div><div><div class="footer-title">Contact</div><a href="tel:863-255-6901">863-255-6901</a><a href="mailto:office@doorsdocksandgates.com">office@doorsdocksandgates.com</a></div></div></footer>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-badge">DDG</div>
+      Doors Docks &amp; Gates
+    </div>
+    <div class="nav-phone">
+      (863) 255-6901
+      <span>Call or text for residential service</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div style="display:flex; justify-content:flex-end; align-items:center; margin-bottom:18px;">
+          <img src="images/ddg-logo-reference.jpg" alt="DDG logo" style="height:88px; width:auto; display:block;">
+        </div>
+        <h1>Residential Garage Door Repair &amp; Service in <span>Your Local Area</span></h1>
+        <p class="hero-sub">
+          Broken spring, opener not working, off-track door, noisy operation, or replacement estimate —
+          fast, clear residential help in [Primary Area] and surrounding communities.
+        </p>
+        <div class="cta-stack">
+          <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
+          <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo of the Problem</a>
+          <a class="btn btn-outline" href="#">📋 Request Service</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-pill">Local residential service</span>
+          <span class="trust-pill">Clear communication</span>
+          <span class="trust-pill">Repair or replace guidance</span>
+        </div>
+      </div>
+      <div class="issue-card">
+        <div class="issue-card-title">What do you need help with?</div>
+        <div class="issue-grid">
+          <div class="issue-chip">🔧 Broken Spring</div>
+          <div class="issue-chip">⚡ Opener Issue</div>
+          <div class="issue-chip">📐 Off Track</div>
+          <div class="issue-chip">🚫 Won't Open</div>
+          <div class="issue-chip">🔊 Noisy Door</div>
+          <div class="issue-chip">🏠 New Door</div>
+        </div>
+        <div class="urgent-bar">⚠️ Door stuck or won't open? Call us now.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEMS -->
+  <div class="section" style="margin-top:20px;">
+    <div class="section-title">Common residential garage door problems</div>
+    <div class="section-sub">These are the most common issues homeowners call about. If yours is not listed, send a photo or call and we will help figure it out.</div>
+    <div class="cards cards-3">
+      <div class="card">
+        <div class="card-icon">🌀</div>
+        <h3>Broken or Worn Springs</h3>
+        <p style="font-size:15px; color:#5a6e82;">Springs break without warning and make the door suddenly heavy or unbalanced. This is one of the most common urgent repairs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Opener Not Working</h3>
+        <p style="font-size:15px; color:#5a6e82;">Remote, keypad, or wall button not responding — opener issues can usually be diagnosed and resolved quickly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📐</div>
+        <h3>Door Off Track</h3>
+        <p style="font-size:15px; color:#5a6e82;">An off-track door is a safety concern and should not be forced. We can help get it back in place properly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚫</div>
+        <h3>Door Won't Open or Close</h3>
+        <p style="font-size:15px; color:#5a6e82;">Whether stuck open or stuck closed, we can help identify the issue and get your door operational.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔊</div>
+        <h3>Noisy or Rough Operation</h3>
+        <p style="font-size:15px; color:#5a6e82;">Grinding, rattling, or rough movement often signals worn rollers, hardware, or lubrication issues — easier to address before they worsen.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Replacement Estimate</h3>
+        <p style="font-size:15px; color:#5a6e82;">Need a new door? DDG can review options and provide a replacement estimate for residential garage doors.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin: 0 24px;" />
+
+  <!-- PHOTO INTAKE -->
+  <div class="section">
+    <div class="intake-section">
+      <div class="intake-left">
+        <span class="badge badge-green">Simple intake</span>
+        <h2 style="font-size:26px; margin: 12px 0 8px;">Not sure what is wrong?<br>Text us a photo.</h2>
+        <p style="color:var(--muted); font-size:15px; margin-bottom:18px;">
+          You do not need to know the technical issue. Just send a short description or a photo and we can help point you in the right direction.
+        </p>
+        <ul class="intake-steps">
+          <li><span class="step-num">1</span> Your city</li>
+          <li><span class="step-num">2</span> What the door is doing</li>
+          <li><span class="step-num">3</span> Stuck open or stuck closed?</li>
+          <li><span class="step-num">4</span> A photo if you can</li>
+          <li><span class="step-num">5</span> Best phone number</li>
+        </ul>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+          <a class="btn btn-gold" href="sms:7069713163">📷 Text a Photo</a>
+          <a class="btn" style="background:var(--light-blue); color:var(--navy);" href="#">📋 Request Service</a>
+        </div>
+      </div>
+      <div class="intake-right">
+        <div class="garage-mockup"></div>
+        <p style="color:rgba(255,255,255,.75); font-size:14px; margin-top:16px; text-align:center;">
+          A photo helps us understand the issue before we talk
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY DDG -->
+  <div class="section">
+    <div class="section-title">Why homeowners call DDG</div>
+    <div class="section-sub">Residential garage door service focused on practical help and clear communication.</div>
+    <div class="cards cards-2">
+      <div class="card">
+        <h3>Repair before replace guidance</h3>
+        <p style="font-size:15px; color:#5a6e82;">Not every garage door problem means you need a new door. DDG can help review the issue and explain whether repair or replacement makes the most sense for your situation.</p>
+      </div>
+      <div class="card">
+        <h3>Local residential focus</h3>
+        <p style="font-size:15px; color:#5a6e82;">DDG focuses on residential garage door service in [Primary Area] and surrounding communities. When you call, you get a local team that knows the area.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE AREA -->
+  <div class="section">
+    <div class="section-title">Service area</div>
+    <div class="section-sub">DDG serves homeowners in [Primary Area] and surrounding communities. Replace these with the actual service towns.</div>
+    <div class="area-grid">
+      <div class="area-chip">Primary Area</div>
+      <div class="area-chip">Town 1</div>
+      <div class="area-chip">Town 2</div>
+      <div class="area-chip">Town 3</div>
+      <div class="area-chip">Town 4</div>
+      <div class="area-chip">Town 5</div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);">
+      Not sure if we cover your area? Call or message and we will let you know.
+    </p>
+  </div>
+
+  <!-- REVIEWS placeholder -->
+  <div class="section">
+    <div class="section-title">What local homeowners say</div>
+    <div class="section-sub">Add real Google reviews here once collected. These placeholders show what the section will look like.</div>
+    <div class="cards cards-3">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Fast response, clear explanation, fair price. Spring was replaced the same day. Would definitely recommend to neighbors."</p>
+        <div class="reviewer">— Local homeowner, [Area]</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Opener was not working and DDG helped me figure out the problem quickly. Very straightforward, no upsell pressure."</p>
+        <div class="reviewer">— Local homeowner, [Area]</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Got an estimate for a new door and appreciated that they explained my options honestly. Easy to work with."</p>
+        <div class="reviewer">— Local homeowner, [Area]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <h2>Need residential garage door help?</h2>
+    <p>Call now, text a photo, or request service. Tell us your city and what the door is doing.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
+      <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo</a>
+      <a class="btn btn-outline" href="#">📋 Request Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    DDG — Doors Docks &amp; Gates &nbsp;|&nbsp; Serving [Primary Area] and surrounding communities &nbsp;|&nbsp; (863) 255-6901
+  </div>
+
 </body>
 </html>
