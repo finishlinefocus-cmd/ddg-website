@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DDG Commercial Services | Doors, Docks & Gates</title>
+  <meta name="description" content="Commercial overhead doors, docks, operators, shutters, and access systems from DDG across Northwest Georgia and Southeastern Tennessee." />
+  <style>
+    :root {
+      --black:#161616;
+      --charcoal:#2b2b2b;
+      --slate:#4c4c4c;
+      --light:#f3f3f3;
+      --white:#ffffff;
+      --gold:#c8a24a;
+      --gold-lite:#e3bf68;
+      --border:#dddddd;
+      --wrap:1180px;
+      --shadow:0 16px 40px rgba(0,0,0,.18);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:var(--white);color:var(--black);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .wrap{width:min(var(--wrap),calc(100% - 1.5rem));margin:0 auto}
+
+    .topbar{background:var(--charcoal);color:rgba(255,255,255,.82);font-size:.85rem}
+    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.65rem 0}
+    .topbar a{color:var(--gold-lite);font-weight:700}
+
+    .hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:#111}
+    .hero-bg{position:absolute;inset:0;background:url('images/img_hero_bg.jpg') center/cover no-repeat;filter:brightness(.3)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.62) 42%,rgba(0,0,0,.18) 100%)}
+    .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center;padding:4.5rem 0}
+    .eyebrow{color:var(--gold-lite);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:800;margin-bottom:.85rem}
+    h1{margin:0 0 1rem;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.02;text-transform:uppercase;color:var(--white)}
+    .lead{max-width:640px;color:rgba(255,255,255,.86);font-size:1rem;margin:0 0 1.6rem}
+    .hero-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.3rem;border-radius:3px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.92rem}
+    .btn-primary{background:var(--gold);color:var(--white)}
+    .btn-secondary{border:2px solid rgba(255,255,255,.28);color:var(--white)}
+    .hero-panel{background:rgba(255,255,255,.96);box-shadow:var(--shadow);overflow:hidden}
+    .hero-panel img{width:100%;height:100%;min-height:360px;object-fit:cover}
+
+    .photo-strip{display:grid;grid-template-columns:repeat(4,1fr)}
+    .photo-card{position:relative;aspect-ratio:1/1;overflow:hidden;background:#ddd}
+    .photo-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.95)}
+    .photo-card span{position:absolute;left:0;right:0;bottom:0;padding:1.35rem .8rem .7rem;background:linear-gradient(transparent,rgba(0,0,0,.8));color:var(--white);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+
+    section{padding:3.25rem 0}
+    .section-head{text-align:center;max-width:780px;margin:0 auto 2rem}
+    .section-head h2{margin:.2rem 0 .65rem;font-size:clamp(1.7rem,3vw,2.6rem);text-transform:uppercase}
+    .section-head p{margin:0;color:#555}
+    .rule{width:52px;height:3px;background:var(--gold);margin:.75rem auto 1rem}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#dddddd;border:1px solid #dddddd}
+    .service-card{background:var(--white);padding:2rem 1.6rem}
+    .service-kicker{color:var(--gold);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.6rem}
+    .service-card h3{margin:0 0 .6rem;text-transform:uppercase;font-size:1.08rem}
+    .service-card p{margin:0;color:#5a5a5a}
+
+    .feature-band{background:var(--light)}
+    .feature-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .feature-copy h2{margin:.2rem 0 .8rem;font-size:clamp(1.6rem,3vw,2.3rem);text-transform:uppercase}
+    .feature-copy p{color:#555;margin:0 0 .9rem}
+    .feature-list{list-style:none;margin:1rem 0 0;padding:0}
+    .feature-list li{padding:.45rem 0;border-bottom:1px solid #d7d7d7;color:#444}
+    .feature-list li:last-child{border-bottom:none}
+    .feature-media img{width:100%;border:1px solid #ddd;box-shadow:var(--shadow);object-fit:cover;min-height:360px}
+
+    .cta{background:var(--gold);color:var(--white);text-align:center}
+    .cta h2{margin:0 0 .7rem;text-transform:uppercase;font-size:clamp(1.5rem,3vw,2.2rem)}
+    .cta p{margin:0 0 1.25rem;color:rgba(255,255,255,.92)}
+    .cta .btn-dark{background:#111;color:#fff;display:inline-flex;padding:.95rem 1.5rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+
+    footer{background:#111;color:rgba(255,255,255,.72)}
+    footer .wrap{padding:1.6rem 0}
+
+    @media (max-width: 980px){
+      .hero .wrap,.feature-grid{grid-template-columns:1fr}
+      .photo-strip{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .photo-strip,.services-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-panel img{min-height:260px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div>Commercial doors, docks &amp; access systems</div>
+      <div><a href="desktop.html" style="font-weight:800; text-decoration:none;">← Back to Residential</a></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Commercial Side</div>
+        <h1>Commercial service built for uptime.</h1>
+        <p class="lead">DDG supports overhead doors, loading docks, operators, facility access, shutters, and commercial entry systems with a stronger photo-driven layout pulled from the earlier Wix-style build work.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:7069713163">Call DDG</a>
+          <a class="btn btn-secondary" href="desktop.html">Residential Front</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <img src="images/img_commercial.jpg" alt="DDG commercial services">
+      </div>
+    </div>
+  </section>
+
+  <div class="photo-strip">
+    <div class="photo-card"><img src="images/commercial_1.jpg" alt="Commercial overhead doors"><span>Commercial Overhead Doors</span></div>
+    <div class="photo-card"><img src="images/dock_1.jpg" alt="Dock equipment"><span>Dock Equipment</span></div>
+    <div class="photo-card"><img src="images/operator_1.jpg" alt="Operators and controls"><span>Operators &amp; Controls</span></div>
+    <div class="photo-card"><img src="images/hero_loading_dock.jpg" alt="Loading dock service"><span>Facility Uptime Support</span></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Commercial door, dock &amp; access solutions</h2>
+        <div class="rule"></div>
+        <p>Recovered from the earlier stronger commercial/photo build so you can keep moving from existing work instead of starting over.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-kicker">Commercial</div>
+          <h3>Overhead Doors</h3>
+          <p>Commercial overhead door installation, repair, service calls, and replacement support.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-kicker">Dock Equipment</div>
+          <h3>Dock Levelers &amp; Equipment</h3>
+          <p>Dock levelers, dock accessories, and loading area support built around operational uptime.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-kicker">Operators</div>
+          <h3>Operators &amp; Controls</h3>
+          <p>Commercial operators, controls, troubleshooting, and access-system support.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-kicker">Access Systems</div>
+          <h3>Shutters &amp; Entry Systems</h3>
+          <p>Commercial access points, shutters, and entry hardware support for active facilities.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-kicker">Service</div>
+          <h3>Repair &amp; Replacement Guidance</h3>
+          <p>Help deciding whether to repair, replace, or phase upgrades based on operational need.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-kicker">Coverage</div>
+          <h3>Northwest Georgia &amp; Southeastern Tennessee</h3>
+          <p>Regional commercial support presented in the current DDG color direction.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-band">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <div class="eyebrow">Commercial Focus</div>
+        <h2>A stronger commercial presentation using the work already done</h2>
+        <p>This recovered version leans back into the earlier photo-driven commercial direction instead of the lighter placeholder page that was showing now.</p>
+        <p>It keeps the current flow moving while preserving the earlier Wix-inspired visual work and the existing repo image set.</p>
+        <ul class="feature-list">
+          <li>Existing commercial imagery restored first</li>
+          <li>Current DDG live color direction preserved</li>
+          <li>No new redesign invented yet</li>
+          <li>Ready for exact next-step refinement</li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <img src="images/commercial_2.jpg" alt="Recovered commercial DDG photo section">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Need commercial door, dock, or access help?</h2>
+      <p>Use this recovered commercial build as the base and then we can refine one exact change at a time.</p>
+      <a class="btn-dark" href="mailto:office@doorsdocksandgates.com">Request Commercial Service</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Doors Docks &amp; Gates · Commercial service across Northwest Georgia &amp; Southeastern Tennessee · <a href="mailto:office@doorsdocksandgates.com">office@doorsdocksandgates.com</a></div>
+  </footer>
+</body>
+</html>
