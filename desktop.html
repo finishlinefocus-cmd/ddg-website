@@ -33,7 +33,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Arial, sans-serif;
+      font-family: Inter, 'Segoe UI', Arial, sans-serif;
       background: var(--off-white);
       color: var(--text);
       line-height: 1.6;
@@ -85,7 +85,18 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 36px;
-      align-items: center;
+      align-items: start;
+    }
+    .hero-logo-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+    .hero-logo {
+      width: min(260px, 100%);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 26px rgba(0,0,0,.22));
     }
     .hero h1 {
       font-size: clamp(30px, 4.5vw, 50px);
@@ -135,11 +146,11 @@
     /* ISSUE CARD */
     .issue-card {
       background: var(--white);
-      margin-top: 34px;
       border-radius: var(--radius-md);
       padding: 20px;
       box-shadow: var(--shadow-lg);
       color: var(--text);
+      margin-top: 38px;
     }
     .issue-card-title {
       font-size: 11px;
@@ -352,18 +363,18 @@
   <div class="hero">
     <div class="hero-inner">
       <div>
-        <div style="display:flex; justify-content:flex-end; align-items:center; margin-bottom:18px;">
-          <img src="images/ddg-logo-reference.jpg" alt="DDG logo" style="height:88px; width:auto; display:block;">
+        <div class="hero-logo-row">
+          <img class="hero-logo" src="images/ddg-logo-reference.jpg" alt="DDG logo">
         </div>
-        <h1>Residential Garage Door Repair &amp; Service in <span>Your Local Area</span></h1>
+        <h1>Residential Garage Door Service and Repair <span>Serving NW Georgia and SE Tennessee</span></h1>
         <p class="hero-sub">
           Broken spring, opener not working, off-track door, noisy operation, or replacement estimate —
           fast, clear residential help in [Primary Area] and surrounding communities.
         </p>
         <div class="cta-stack">
           <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
-          <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo of the Problem</a>
-          <a class="btn btn-outline" href="#">📋 Request Service</a>
+          <a class="btn btn-outline" href="sms:7068798424">📷 Text a Photo of the Problem</a>
+          <a class="btn btn-outline" href="mailto:office@doorsdocksandgates.com">📋 Request Service</a>
         </div>
         <div class="hero-trust">
           <span class="trust-pill">Local residential service</span>
@@ -444,7 +455,7 @@
         </ul>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
           <a class="btn btn-gold" href="sms:7069713163">📷 Text a Photo</a>
-          <a class="btn" style="background:var(--light-blue); color:var(--navy);" href="#">📋 Request Service</a>
+          <a class="btn" style="background:var(--light-blue); color:var(--navy);" href="mailto:office@doorsdocksandgates.com">📋 Request Service</a>
         </div>
       </div>
       <div class="intake-right">
@@ -519,7 +530,7 @@
     <div class="cta-row">
       <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
       <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo</a>
-      <a class="btn btn-outline" href="#">📋 Request Service</a>
+      <a class="btn btn-outline" href="mailto:office@doorsdocksandgates.com">📋 Request Service</a>
     </div>
   </div>
   <div class="footer-bottom">
