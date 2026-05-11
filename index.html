@@ -4,28 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Doors, Docks & Gates</title>
-  <meta name="description" content="DDG entry page that routes visitors to the best experience for their device." />
-  <meta http-equiv="refresh" content="0; url=desktop.html" />
   <script>
     (function () {
       var ua = navigator.userAgent || navigator.vendor || window.opera || '';
       var isMobile = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(ua) || window.innerWidth <= 768;
       var target = isMobile ? 'mobile.html' : 'desktop.html';
-      if (!location.pathname.endsWith('/' + target) && !location.pathname.endsWith(target)) {
-        location.replace(target + location.search + location.hash);
-      }
+      location.replace(target + location.search + location.hash);
     })();
   </script>
-  <style>
-    body{margin:0;font-family:Arial,sans-serif;background:#0b2443;color:#fff;display:grid;place-items:center;min-height:100vh;padding:24px;text-align:center}
-    a{color:#f0c96c}
-  </style>
 </head>
 <body>
-  <div>
-    <h1>Loading Doors, Docks & Gates…</h1>
-    <p>If you are not redirected automatically, choose your view below.</p>
-    <p><a href="mobile.html">Open mobile site</a> · <a href="desktop.html">Open desktop site</a></p>
-  </div>
 </body>
 </html>

@@ -8,66 +8,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="residential-desktop">
 
-  <!-- NAV -->
-  <nav class="site-top-nav">
-    <div class="nav-logo-wrap">
-      <img src="images/ddg-logo.png" class="header-logo-large" alt="DDG logo">
-      <div class="nav-logo">Doors Docks &amp; Gates</div>
+  <header class="site-header">
+    <div class="header-logo">
+      <img src="images/ddg-logo.png" style="height: 50px; width: auto;" alt="DDG logo">
+      <span class="brand-full">Doors Docks &amp; Gates</span>
+      <span class="brand-short">DDG</span>
     </div>
-    <div class="nav-phone">
-      Office # 706-971-3163
-      <span>office@doorsdocksandgates.com</span>
-    </div>
-  </nav>
-
-  <nav class="nav">
-    <div class="wrap">
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#cta">Request Service</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#area">Service Area</a>
-        <a href="commercial.html">Commercial</a>
+    <nav class="header-nav">
+      <a href="#services">Services</a>
+      <a href="#cta">Request</a>
+      <a href="#area">Area</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="commercial.html" class="commercial-link">Commercial</a>
+    </nav>
+    <div class="menu-controls">
+      <div class="header-contact">
+        <strong>706-971-3163</strong>
+        <a href="mailto:office@doorsdocksandgates.com">office@doorsdocksandgates.com</a>
       </div>
       <a class="cta-btn" href="tel:7069713163">☎ Call Now</a>
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="menu-toggle">☰</label>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <div class="hero" id="home" style="text-align: center; padding: 4rem 0;">
-    <div class="hero-inner" style="display: block; max-width: 800px; margin: 0 auto;">
-      <div>
-        <h1 style="margin-bottom: 2rem;">Residential Garage Door Service and Repair <span style="display: block; margin-top: 0.5rem; font-size: 1.2rem; opacity: 0.9;">Serving NW Georgia and SE Tennessee Areas</span></h1>
-      <div style="display: flex; gap: 40px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem;">
-        <div class="cta-stack" style="display: flex; flex-direction: column; gap: 12px; margin: 0; min-width: 320px;">
-          <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
-          <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo of the Problem</a>
-          <a class="btn btn-outline" href="mailto:office@doorsdocksandgates.com">📋 Request Service</a>
+  <section class="hero" id="home" aria-label="Main Hero Section">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1>Residential Garage Door<br>Service and Repair</h1>
+          <p class="hero-sub">Serving NW Georgia and SE Tennessee Areas</p>
         </div>
-        
-        <div class="issue-card" style="margin: 0;">
-          <div class="issue-card-title">What do you need help with?</div>
-          <div class="issue-grid">
-            <div class="issue-chip">🔧 Broken Spring</div>
-            <div class="issue-chip">⚡ Opener Issue</div>
-            <div class="issue-chip">📐 Off Track</div>
-            <div class="issue-chip">🚫 Won't Open</div>
-            <div class="issue-chip">🔊 Noisy Door</div>
-            <div class="issue-chip">🏠 New Door</div>
+        <div class="hero-actions">
+          <div class="cta-stack">
+            <a class="btn btn-gold" href="tel:7069713163">📞 Call Now</a>
+            <a class="btn btn-outline" href="sms:7069713163">📷 Text a Photo of the Problem</a>
+            <a class="btn btn-outline" href="mailto:office@doorsdocksandgates.com">📋 Request Service</a>
           </div>
-          <div class="urgent-bar">⚠️ Door stuck or won't open? Call us now.</div>
+          <div class="issue-card">
+            <div class="issue-card-title">What do you need help with?</div>
+            <div class="issue-grid" role="list">
+              <a href="#services" class="issue-chip" role="listitem"><span aria-hidden="true">🔧</span> Broken Spring</a>
+              <a href="#services" class="issue-chip" role="listitem"><span aria-hidden="true">⚡</span> Opener Issue</a>
+              <a href="#services" class="issue-chip" role="listitem"><span aria-hidden="true">📐</span> Off Track</a>
+              <a href="tel:7069713163" class="issue-chip" role="listitem"><span aria-hidden="true">🚫</span> Won't Open</a>
+              <a href="#services" class="issue-chip" role="listitem"><span aria-hidden="true">🔊</span> Noisy Door</a>
+              <a href="#services" class="issue-chip" role="listitem"><span aria-hidden="true">🏠</span> New Door</a>
+            </div>
+            <a href="tel:7069713163" class="urgent-bar" style="display: block; text-decoration: none;"><span aria-hidden="true">⚠️</span> Door stuck or won't open? Call us now.</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- PROBLEMS -->
   <div class="section" id="services" style="margin-top:20px;">
     <div class="section-title">Common residential garage door problems</div>
     <div class="section-sub">These are the most common issues homeowners call about. If yours is not listed, send a photo or call and we will help figure it out.</div>
@@ -105,9 +104,8 @@
     </div>
   </div>
 
-  <hr class="divider" style="margin: 0 24px;" />
+  <hr class="divider" />
 
-  <!-- PHOTO INTAKE -->
   <div class="section" id="cta">
     <div class="intake-section">
       <div class="intake-left">
@@ -139,7 +137,6 @@
     </div>
   </div>
 
-  <!-- WHY DDG -->
   <div class="section">
     <div class="section-title">Why homeowners call DDG</div>
     <div class="section-sub">Residential garage door service focused on practical help and clear communication.</div>
@@ -155,7 +152,6 @@
     </div>
   </div>
 
-  <!-- REVIEWS placeholder -->
   <div class="section" id="reviews">
     <div class="section-title">What local homeowners say</div>
     <div class="section-sub">Direct feedback from homeowners we've served.</div>
@@ -178,7 +174,6 @@
     </div>
   </div>
 
-  <!-- SERVICE AREA -->
   <div class="section" id="area">
     <div class="section-title">Service area</div>
     <div class="section-sub">DDG serves homeowners in NW Georgia and SE Tennessee.</div>
@@ -193,6 +188,28 @@
     <p style="margin-top:14px; font-size:14px; color:var(--muted);">
       Not sure if we cover your area? Call or message and we will let you know.
     </p>
+  </div>
+
+  <div class="section" id="about">
+    <div class="about-contact">
+      <div class="about-card">
+        <h2>About Doors, Docks &amp; Gates</h2>
+        <p>Based in Crandall, GA, Doors, Docks &amp; Gates provides residential garage door service for homeowners across NW Georgia and SE Tennessee — practical advice, honest pricing, and quick turnaround.</p>
+        <ul class="clean">
+          <li>Residential garage door repair and service</li>
+          <li>Spring, opener, track, and cable repairs</li>
+          <li>New door estimates and replacement</li>
+          <li>Honest repair-or-replace guidance</li>
+          <li>Local team serving NW Georgia and SE Tennessee</li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <h3>Contact</h3>
+        <p><strong>Phone:</strong><br><a href="tel:7069713163">706-971-3163</a></p>
+        <p><strong>Email:</strong><br><a href="mailto:office@doorsdocksandgates.com">office@doorsdocksandgates.com</a></p>
+        <p><strong>Location:</strong><br>379 Jim Petty Rd. Crandall, GA 30711</p>
+      </div>
+    </div>
   </div>
 
   <footer style="background: #000; color: #fff; padding: 2.5rem 0;">
