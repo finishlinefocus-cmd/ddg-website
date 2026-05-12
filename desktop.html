@@ -32,8 +32,7 @@
         <a href="mailto:office@doorsdocksandgates.com">office@doorsdocksandgates.com</a>
       </div>
       <a class="cta-btn" href="tel:7069713163">☎ Call Now</a>
-      <input type="checkbox" id="menu-checkbox">
-      <label for="menu-checkbox" class="menu-toggle">☰</label>
+      <button class="menu-toggle" id="drawerToggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
@@ -222,5 +221,47 @@
     </div>
   </footer>
 
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="side-drawer" id="sideDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+    <nav class="drawer-nav">
+      <a href="#services">Services</a>
+      <a href="#cta">Request</a>
+      <a href="#area">Area</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="commercial.html">Commercial →</a>
+    </nav>
+    <div class="drawer-actions">
+      <a class="drawer-action-call" href="tel:7069713163">📞 Call — 706-971-3163</a>
+      <a class="drawer-action-text" href="sms:7068798424">💬 Text — (706) 879-8424</a>
+      <a class="drawer-action-email" href="mailto:office@doorsdocksandgates.com">✉️ office@doorsdocksandgates.com</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById('drawerToggle');
+      var drawer = document.getElementById('sideDrawer');
+      var overlay = document.getElementById('drawerOverlay');
+      var closeBtn = document.getElementById('drawerClose');
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (overlay) overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeDrawer);
+      });
+    })();
+  </script>
 </body>
 </html>

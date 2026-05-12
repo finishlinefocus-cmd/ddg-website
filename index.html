@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Doors, Docks & Gates</title>
   <script>
-    (function () {
-      var ua = navigator.userAgent || navigator.vendor || window.opera || '';
-      var isMobile = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(ua) || window.innerWidth <= 768;
-      var target = isMobile ? 'mobile.html' : 'desktop.html';
-      location.replace(target + location.search + location.hash);
-    })();
+    location.replace('desktop.html' + location.search + location.hash);
   </script>
 </head>
 <body>
