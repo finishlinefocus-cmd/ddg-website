@@ -58,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
   background: var(--off);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -1130,19 +1132,20 @@ body.mobile-residential .site-footer a {
 .side-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
+  right: 0;
   width: 300px;
   height: 100%;
   background: var(--charcoal-deep);
   z-index: 2000;
-  transition: right 0.3s ease;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
 .side-drawer.open {
-  right: 0;
+  transform: translateX(0);
 }
 .drawer-close {
   align-self: flex-end;
